@@ -1,13 +1,15 @@
-package dominio;
+import dominio.ArmaduraSamurai;
+import dominio.FlechasDeFogo;
+import dominio.MagiaDeLuz;
+import dominio.Personagem;
+import dominio.PersonagemFactory;
 import java.util.Scanner;
 
 public class App {
-    /**
-     * @param args
-     */
+
     public static void main(String[] args) {
         try (Scanner scanner = new Scanner(System.in)) {
-            System.out.println("Escolha:\n 1-Para Samurai\n 2-Para arqueiro\n 3-Para mago");
+            System.out.println("Escolha:\n 1-Para Samurai\n 2-Para arqueiro\n 3-Para mago\n Escolha uma opção : ");
             String tipo = scanner.next();
             Personagem personagem;
 
@@ -34,6 +36,7 @@ public class App {
                         personagem.exibirInformacoes();
                     }
                 }
+
                 case "3" -> {
                     personagem = PersonagemFactory.criarPersonagem("Mago");
                     personagem.exibirInformacoes();
